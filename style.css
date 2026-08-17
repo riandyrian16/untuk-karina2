@@ -1,0 +1,244 @@
+/* --- REGULASI DASAR --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fdf8f5;
+  color: #333333;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* --- TAMPILAN COVER PEMBUKA --- */
+.cover-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #1d1a27 0%, #3a2e39 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  padding: 20px;
+}
+
+.cover-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 40px 25px;
+  border-radius: 24px;
+  max-width: 420px;
+  width: 100%;
+  color: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.sub-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #e2b091;
+  margin-bottom: 10px;
+}
+
+.main-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.8rem;
+  color: #f7d6c8;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.avatar-wrapper {
+  margin: 0 auto 20px auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  padding: 5px;
+  background: linear-gradient(135deg, #e2b091, #d8707c);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sender-tag {
+  display: inline-block;
+  background: rgba(226, 176, 145, 0.2);
+  color: #f7d6c8;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 10px 0 25px 0;
+}
+
+.btn-action {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #e2b091 0%, #d8707c 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(216, 112, 124, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(216, 112, 124, 0.4);
+}
+
+/* --- TOMBOL MUSIK --- */
+.music-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #d8707c;
+  color: #ffffff;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(216, 112, 124, 0.4);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.music-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* --- KONTEN UTAMA --- */
+#main-content {
+  display: none;
+  padding-bottom: 60px;
+}
+
+.section-container {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 60px 20px 20px 20px;
+}
+
+.section-heading {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.2rem;
+  color: #c05c67;
+  margin-bottom: 20px;
+}
+
+.card-message {
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #d8707c;
+  line-height: 1.8;
+  font-size: 0.98rem;
+  color: #555555;
+  text-align: left;
+}
+
+.card-message p {
+  margin-bottom: 15px;
+}
+
+.signature {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: #c05c67;
+  text-align: right;
+  margin-top: 20px;
+}
+
+/* --- KOTAK HITUNG MUNDUR --- */
+.timer-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.timer-box {
+  background: #ffffff;
+  width: 80px;
+  padding: 15px 5px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0e2db;
+}
+
+.timer-number {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #d8707c;
+}
+
+.timer-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #999999;
+  margin-top: 4px;
+}
+
+/* --- GALERI FOTO --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-card {
+  overflow: hidden;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 8px;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+/* --- BAGIAN FOOTER --- */
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 0.8rem;
+  color: #aaa;
+  letter-spacing: 1px;
+}
